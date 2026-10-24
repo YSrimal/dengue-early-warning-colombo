@@ -1,0 +1,14 @@
+# Everything needed to re-run notebooks/dengue_ensemble_analysis.ipynb
+-r requirements.txt
+scipy
+lightgbm
+catboost
+statsmodels
+shap
+lime
+matplotlib
+seaborn
+pyreadr
+jupyter
+flask
+gunicorn

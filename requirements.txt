@@ -1,0 +1,7 @@
+# Lean runtime requirements (Streamlit Community Cloud reads this file).
+# Versions match the ones used to create models/dengue_model.pkl. Use Python 3.12 when deploying.
+streamlit>=1.40
+numpy==2.4.4
+pandas==3.0.2
+scikit-learn==1.8.0
+xgboost==3.4.1

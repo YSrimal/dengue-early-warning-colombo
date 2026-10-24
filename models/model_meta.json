@@ -1,0 +1,156 @@
+{
+  "model": "XGBoost",
+  "horizon_weeks": 2,
+  "high_week_threshold_cases": 149.75,
+  "raw_fields": [
+    "cases_t",
+    "cases_t1",
+    "cases_t2",
+    "cases_t3",
+    "epi_week",
+    "rain_4wk",
+    "rain_8wk",
+    "humidity_4wk",
+    "temp_4wk",
+    "wind_4wk",
+    "visib_4wk"
+  ],
+  "data_range": [
+    "2009-02-16",
+    "2014-04-28"
+  ],
+  "test_auc": 0.792,
+  "test_auc_ci": [
+    0.646,
+    0.903
+  ],
+  "field_ranges": {
+    "cases_t": {
+      "min": 8.0,
+      "median": 101.5,
+      "max": 475.0
+    },
+    "cases_t1": {
+      "min": 8.0,
+      "median": 100.5,
+      "max": 475.0
+    },
+    "cases_t2": {
+      "min": 8.0,
+      "median": 99.5,
+      "max": 475.0
+    },
+    "cases_t3": {
+      "min": 8.0,
+      "median": 99.5,
+      "max": 475.0
+    },
+    "epi_week": {
+      "min": 1.0,
+      "median": 25.5,
+      "max": 53.0
+    },
+    "rain_4wk": {
+      "min": 0.008925,
+      "median": 5.2384,
+      "max": 34.67215
+    },
+    "rain_8wk": {
+      "min": 0.1268375,
+      "median": 5.477215228125001,
+      "max": 23.028225
+    },
+    "humidity_4wk": {
+      "min": 69.89285000000001,
+      "median": 80.1517875,
+      "max": 87.89285000000001
+    },
+    "temp_4wk": {
+      "min": 25.70715,
+      "median": 27.625,
+      "max": 29.31785
+    },
+    "wind_4wk": {
+      "min": 1.6839250000000001,
+      "median": 5.0116125,
+      "max": 8.867849999999999
+    },
+    "visib_4wk": {
+      "min": 16.3009,
+      "median": 19.6308,
+      "max": 20.025
+    }
+  },
+  "example": {
+    "inputs": {
+      "cases_t": 146.0,
+      "cases_t1": 115.0,
+      "cases_t2": 159.0,
+      "cases_t3": 42.0,
+      "epi_week": 19.0,
+      "rain_4wk": 5.63,
+      "rain_8wk": 5.59,
+      "humidity_4wk": 79.48,
+      "temp_4wk": 26.88,
+      "wind_4wk": 4.81,
+      "visib_4wk": 19.65
+    },
+    "week_start": "2014-05-05"
+  },
+  "examples": [
+    {
+      "label": "Rising week (real, test period)",
+      "week_start": "2013-12-16",
+      "outcome": "actual: 244 cases 2 weeks later (HIGH)",
+      "inputs": {
+        "cases_t": 249.0,
+        "cases_t1": 256.0,
+        "cases_t2": 254.0,
+        "cases_t3": 215.0,
+        "epi_week": 51.0,
+        "rain_4wk": 6.6,
+        "rain_8wk": 5.27,
+        "humidity_4wk": 79.25,
+        "temp_4wk": 26.75,
+        "wind_4wk": 5.01,
+        "visib_4wk": 19.68
+      }
+    },
+    {
+      "label": "Quiet week (real, test period)",
+      "week_start": "2013-09-30",
+      "outcome": "actual: 48 cases 2 weeks later (normal)",
+      "inputs": {
+        "cases_t": 112.0,
+        "cases_t1": 108.0,
+        "cases_t2": 108.33,
+        "cases_t3": 108.67,
+        "epi_week": 40.0,
+        "rain_4wk": 2.79,
+        "rain_8wk": 2.93,
+        "humidity_4wk": 79.89,
+        "temp_4wk": 27.84,
+        "wind_4wk": 5.35,
+        "visib_4wk": 19.9
+      }
+    },
+    {
+      "label": "Hard case: surge ahead (left-out week)",
+      "week_start": "2014-05-05",
+      "outcome": "actual: 329 cases 2 weeks later (HIGH)",
+      "inputs": {
+        "cases_t": 146.0,
+        "cases_t1": 115.0,
+        "cases_t2": 159.0,
+        "cases_t3": 42.0,
+        "epi_week": 19.0,
+        "rain_4wk": 5.63,
+        "rain_8wk": 5.59,
+        "humidity_4wk": 79.48,
+        "temp_4wk": 26.88,
+        "wind_4wk": 4.81,
+        "visib_4wk": 19.65
+      }
+    }
+  ]
+}
